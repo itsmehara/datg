@@ -101,3 +101,24 @@ Contributions are welcome! Please follow the [contribution guidelines](CONTRIBUT
 
 ## License
 DatG is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+
+
+# Code not completed yet. it will be done sooner. # 
+
+The provided code structure includes basic implementations and examples for core functionalities described in the `README.md` current file. 
+It covers:
+
+- Basic module setup for generating data, handling fields, and formatting outputs.
+- Sample utility functions.
+- Basic unit tests for each module.
+
+### Potential Areas for Further Development:
+1. **Enhanced Data Type Support**: Expanding `datg.fields` to include more data types (e.g., dates, custom objects).
+2. **Validation and Error Handling**: Adding robust error handling and input validation across modules.
+3. **Extensible Format Support**: Implementing additional output formats (e.g., XML, Excel).
+4. **Advanced Features**: Features like customizable data ranges, regex-based string generation, and data dependencies.
+5. **Documentation**: Adding comprehensive inline comments and a more detailed `README.md` for advanced usage.
+6. **Testing**: Creating more exhaustive test cases covering edge cases and error conditions.
+7. **Performance Optimization**: Optimizing data generation for large datasets.
+
