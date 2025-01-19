@@ -122,3 +122,24 @@ It covers:
 6. **Testing**: Creating more exhaustive test cases covering edge cases and error conditions.
 7. **Performance Optimization**: Optimizing data generation for large datasets.
 
+
+### Current folder structure is:
+
+```
+project-root/
+|-- .gitignore
+|-- README.md
+|-- LICENSE
+|-- src/
+    |-- __init__.py
+    |-- generator.py
+    |-- fields.py
+    |-- formatters.py
+    |-- utils.py
+    |-- tests/
+        |-- __init__.py
+        |-- test_generator.py
+        |-- test_fields.py
+        |-- test_formatters.py
+        |-- test_utils.py
+```
