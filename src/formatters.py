@@ -1,9 +1,18 @@
 import json
 import csv
+from typing import List, Dict
 from io import StringIO
 
+def to_csv(data: List[Dict[str, Any]]) -> str:
+    """
+    Convert a list of dictionaries to CSV format.
+    
+    Args:
+        data (List[Dict[str, Any]]): List of records to convert.
 
-def to_csv(data):
+    Returns:
+        str: CSV formatted string.
+    """
     if not data:
         return ""
 
@@ -14,5 +23,14 @@ def to_csv(data):
     return output.getvalue()
 
 
-def to_json(data):
+def to_json(data: List[Dict[str, Any]]) -> str:
+    """
+    Convert a list of dictionaries to JSON format.
+    
+    Args:
+        data (List[Dict[str, Any]]): List of records to convert.
+
+    Returns:
+        str: JSON formatted string.
+    """
     return json.dumps(data, indent=4)

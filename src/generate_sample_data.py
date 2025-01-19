@@ -1,35 +1,24 @@
-# Import the generate_data function from the datg.generator module
-from datg.generator import generate_data
+from src.generator import generate_data
 
-# Define the fields and their corresponding data types
-fields = [
-    ('name', 'str'),
-    ('age', 'int'),
-    ('email', 'str'),
-    ('country', 'str'),
-    ('city', 'str'),
-    ('zip_code', 'str'),
-    ('phone_number', 'str'),
-    ('dob', 'str'),
-    ('salary', 'float'),
-    ('department', 'str')
-]
+def main():
+    fields = [
+        ('name', 'str'),
+        ('age', 'int'),
+        ('email', 'str'),
+        ('salary', 'float'),
+        ('department', 'str'),
+        ('joining_date', 'str'),
+        ('performance_score', 'int'),
+        ('manager', 'str'),
+        ('location', 'str'),
+        ('project_count', 'int')
+    ]
+    num_records = 10000
+    format = 'csv'  # Change to 'json' if needed
 
-# Specify the number of records to generate
-num_records = 10000
+    result = generate_data(fields, num_records, format)
+    with open(f"output.{format}", "w") as file:
+        file.write(result)
 
-# Choose the output format ('json' or 'csv')
-output_format = 'csv'  # Change to 'json' for JSON output
-
-# Generate the data
-generated_data = generate_data(fields, num_records, output_format)
-
-# Save the generated data to a file
-if output_format == 'csv':
-    with open('output.csv', 'w') as f:
-        f.write(generated_data)
-    print("Data saved to output.csv")
-else:
-    with open('output.json', 'w') as f:
-        f.write(generated_data)
-    print("Data saved to output.json")
+if __name__ == "__main__":
+    main()
