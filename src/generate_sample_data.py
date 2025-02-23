@@ -53,11 +53,14 @@ def test_all_fields():
     """
     Generate and print a sample record covering all defined fields.
     """
+    num_records = 20
+    format = 'csv' 
     fields = list(FIELD_SCHEMA.keys())  # Extract all field names
-    test_record = {field: generate_random_value(field, FIELD_SCHEMA[field]) for field in fields}
+    # test_record = {field: generate_random_value(field, FIELD_SCHEMA[field]) for field in fields}
+    test_records = generate_data(fields, num_records, format)
 
     print("🔹 Sample Test Record Covering All Fields:")
-    print(test_record)  # Print to verify
+    print(test_records)  # Print to verify
 
 
 def main():
@@ -86,4 +89,4 @@ def main():
 if __name__ == "__main__":
     main()
     # # Call the test function
-    # test_all_fields()
+    test_all_fields()
