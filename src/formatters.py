@@ -3,6 +3,7 @@ import csv
 from typing import List, Dict
 from io import StringIO
 
+
 def to_csv(data: List) -> str:
     """
     Convert a list of dictionaries to CSV format.
@@ -33,4 +34,4 @@ def to_json(data: List) -> str:
     Returns:
         str: JSON formatted string.
     """
-    return json.dumps(data, indent=4)
+    return json.dumps(data, indent=2)

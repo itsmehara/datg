@@ -20,5 +20,6 @@ def main():
     with open(f"output.{format}", "w") as file:
         file.write(result)
 
+
 if __name__ == "__main__":
     main()
