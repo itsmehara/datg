@@ -70,7 +70,7 @@ def generate_random_value(data_type: str, field_name_: Optional[str] = None) -> 
     elif field_name == "job":
         return fake.job()
     elif field_name == "company":
-        return random.choice(COMPANIES)  # Pick a random company from the list
+        return random.choice(COMPANIES)
     elif field_name == "location":
         return fake.city()
     elif field_name == "joining_date":
@@ -82,13 +82,79 @@ def generate_random_value(data_type: str, field_name_: Optional[str] = None) -> 
     elif field_name == "project_count":
         return random.randint(0, 20)
     elif field_name == "age":
-        return random.randint(21, 71)
+        return random.randint(21, 70)  # Fixed range 21-70
     elif field_name == "department":
         return random.choice(DEPARTMENTS)
     elif field_name == "manager":
         return fake.name()
-    # elif field_name == "location":
-    #     return random.choice(DEPARTMENTS)
+    elif field_name == "phone_number":
+        return fake.phone_number()
+    elif field_name == "address":
+        return fake.address()
+    elif field_name == "date_of_birth":
+        return fake.date_of_birth(minimum_age=21, maximum_age=70).strftime("%Y-%m-%d")
+    elif field_name == "gender":
+        return random.choice(["Male", "Female"]*30 + ["Non-binary", "Other"])
+    elif field_name == "nationality":
+        return fake.country()
+    elif field_name == "marital_status":
+        return random.choice(["Single", "Married", "Divorced", "Widowed"])
+    elif field_name == "emergency_contact":
+        return fake.phone_number()
+    elif field_name == "employee_id":
+        return fake.uuid4()
+    elif field_name == "employment_type":
+        return random.choice(["Full-time", "Part-time", "Contract", "Intern"])
+    elif field_name == "experience_years":
+        return random.randint(0, 40)
+    elif field_name == "job_title":
+        return fake.job()
+    elif field_name == "work_location":
+        return random.choice(["Office", "Remote", "Hybrid"])
+    elif field_name == "team":
+        return fake.word().capitalize() + " Team"
+    elif field_name == "shift_timing":
+        return random.choice(["Morning", "Evening", "Night"])
+    elif field_name == "reporting_manager":
+        return fake.name()
+    elif field_name == "bonus":
+        return round(random.uniform(5000, 50000), 2)
+    elif field_name == "stock_options":
+        return random.randint(0, 1000)
+    elif field_name == "last_promotion_date":
+        return fake.date_between(start_date="-5y", end_date="today").strftime("%Y-%m-%d")
+    elif field_name == "performance_rating":
+        return random.randint(1, 5)
+    elif field_name == "attendance_score":
+        return random.randint(50, 100)
+    elif field_name == "overtime_hours":
+        return random.randint(0, 50)
+    elif field_name == "employee_email":
+        return fake.company_email()
+    elif field_name == "system_access_level":
+        return random.choice(["Admin", "Employee", "Manager", "Intern"])
+    elif field_name == "device_assigned":
+        return random.choice(["MacBook Pro", "Dell XPS", "ThinkPad", "HP EliteBook"])
+    elif field_name == "vpn_access":
+        return random.choice([True, False])
+    elif field_name == "joining_bonus":
+        return round(random.uniform(10000, 50000), 2)
+    elif field_name == "resignation_date":
+        return fake.date_between(start_date="-3y", end_date="today").strftime("%Y-%m-%d") if random.random() < 0.3 else None
+    elif field_name == "exit_interview_feedback":
+        return fake.sentence()
+    elif field_name == "termination_reason":
+        return random.choice(["Resigned", "Performance Issue", "Layoff", "Contract Ended", "Retired"])
+    elif field_name == "work_permit_status":
+        return random.choice(["Valid", "Expired", "Not Required"])
+    elif field_name == "certifications":
+        return [fake.word().capitalize() + " Certification" for _ in range(random.randint(0, 3))]
+    elif field_name == "languages_known":
+        return random.sample(["English", "French", "Spanish", "German", "Mandarin", "Japanese", "Hindi", "Arabic"], random.randint(1, 3))
+    elif field_name == "projects_handled":
+        return [fake.bs().capitalize() for _ in range(random.randint(1, 5))]
+    elif field_name == "training_completed":
+        return [fake.sentence() for _ in range(random.randint(0, 2))]
     elif data_type == "int":
         return random.randint(0, 100)
     elif data_type == "str":
@@ -96,4 +162,4 @@ def generate_random_value(data_type: str, field_name_: Optional[str] = None) -> 
     elif data_type == "float":
         return random.uniform(0.0, 100.0)
     else:
-        raise ValueError("Unsupported data type")
+        raise ValueError(f"Unsupported field: {field_name}")

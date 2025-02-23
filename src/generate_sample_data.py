@@ -1,5 +1,6 @@
 from generator import generate_data
 
+
 def main():
     fields = [
         ('name', 'str'),
@@ -11,7 +12,9 @@ def main():
         ('performance_score', 'int'),
         ('manager', 'str'),
         ('location', 'str'),
-        ('project_count', 'int')
+        ('project_count', 'int'),
+        ('gender', 'str'),
+        ('phone_number', 'int')
     ]
     num_records = 10000
     format = 'csv'  # Change to 'json' if needed
