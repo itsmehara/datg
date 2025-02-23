@@ -1,4 +1,4 @@
-from src.generator import generate_data
+from generator import generate_data
 
 def main():
     fields = [

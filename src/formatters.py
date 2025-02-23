@@ -3,7 +3,7 @@ import csv
 from typing import List, Dict
 from io import StringIO
 
-def to_csv(data: List[Dict[str, Any]]) -> str:
+def to_csv(data: List) -> str:
     """
     Convert a list of dictionaries to CSV format.
     
@@ -23,7 +23,7 @@ def to_csv(data: List[Dict[str, Any]]) -> str:
     return output.getvalue()
 
 
-def to_json(data: List[Dict[str, Any]]) -> str:
+def to_json(data: List) -> str:
     """
     Convert a list of dictionaries to JSON format.
     

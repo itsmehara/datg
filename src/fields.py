@@ -16,7 +16,7 @@ def define_field(name: str, data_type: str) -> Dict[str, Any]:
     return {"name": name, "data_type": data_type, "value": value}
 
 
-def get_supported_data_types() -> List[str]:
+def get_supported_data_types() -> list[str]:
     """
     Get a list of supported data types.
     

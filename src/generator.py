@@ -1,8 +1,8 @@
 import json
 import csv
 from typing import List, Tuple, Union
-from .formatters import to_csv, to_json
-from .fields import define_field
+from formatters import to_csv, to_json
+from fields import define_field
 
 def generate_data(fields: List[Tuple[str, str]], num_records: int, format: str) -> Union[str, None]:
     """
